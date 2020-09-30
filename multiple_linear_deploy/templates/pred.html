@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Profit Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body style="background: #000;">
+ <div class="login">
+	<h1><div style="text-align:center"><font color="blue">Profit Prediction for startup spending</font></div></h1>
+
+  <form action="{{ url_for('predict')}}"method="post">
+
+    	<input type="text" name="New York" placeholder="New York" required="required" />
+      <br>
+      <br>
+        <input type="text" name="California" placeholder="California" required="required" />
+        <br>
+        <br>
+		<input type="text" name="Florida" placeholder="Florida" required="required" />
+    <br>
+    <br>
+    <input type="text" name="RnD_Spend" placeholder="RnD_Spend" required="required" />
+    <br>
+    <br>
+    <input type="text" name="Administration" placeholder="Administration" required="required" />
+    <br>
+    <br>
+    <input type="text" name="Marketing_Spend" placeholder="Marketing_Spend" required="required" />
+    <br>
+    <br>
+
+    <button type="predict" class="btn btn-primary btn-block btn-large">Predict</button>
+      </form>
+
+     <br>
+     <br>
+     <hr>
+     <div class="card text-center" style="width:21.5em;margin:0 auto;">
+       <div class="card-body">
+         <p class="card text"><h1><font color="blue">{{prediction}}</font></h1></p>
+
+
+   </div>
+
+
+  </body>
+  </html>
